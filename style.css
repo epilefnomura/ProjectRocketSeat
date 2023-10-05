@@ -11,7 +11,7 @@
     --surface-color: rgba(255, 255, 255, 0.1);
     --surface-color-hover: rgba(255, 255, 255, 0.05);
     --highlight-color: rgba(255, 255, 255, 0.2);
-    --switch-bg-url: url(/src/assets/MoonStars.svg);
+    --switch-bg-url: url(/src/assets/moon-stars.svg);
 }
 
 .light {
@@ -40,6 +40,7 @@ body * {
     padding: 0 24px;
 }
 
+/* Profile */
 #profile {
     text-align: center;
     padding: 24px;
@@ -56,41 +57,86 @@ body * {
     padding-top: 8px;
 }
 
+/* Links */
 ul {
     list-style: none;
-  
+    
     display: flex;
     flex-direction: column;
     gap: 16px;
-  
+    
     padding: 24px 0;
-  }
-  
-  ul li a {
+}
+
+ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
-  
+    
     padding: 16px 24px;
-  
+    
     background: var(--surface-color);
     border: 1px solid var(--stroke-color);
     border-radius: 8px;
-  
+    
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-  
+    
     text-decoration: none;
     font-weight: 500;
-  
+    
     transition: background 0.2s;
-  }
+}
 
 ul li a:hover {
     background: var(--surface-color-hover);
     border: 1.5px solid var(--text-color);
-  }
+}
 
+/* Switch */
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+    
+    animation: slide-back 0.2s;
+}
+
+.light #switch button {
+    left: 0;
+    right: initial;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+/* Social Links */
 #social-links {
     display: flex;
     padding: 24px 0;
@@ -112,6 +158,8 @@ ul li a:hover {
     background: var(--highlight-color);
 }
 
+
+/* Rodapé */
 #footer-autor {
     display: flex;
     padding: 24px;
@@ -119,37 +167,3 @@ ul li a:hover {
     align-items: center;
     gap: 8px;
 }
-
-#switch {
-    position: relative;
-    width: 64px;
-  
-    margin: 4px auto;
-  }
-  
-  #switch button {
-    width: 32px;
-    height: 32px;
-    background: white var(--switch-bg-url) no-repeat center;
-    border: 0;
-    border-radius: 50%;
-  
-    position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: 1;
-    transform: translateY(-50%);
-  
-    animation: slide-back 0.2s;
-  }
-
-  #switch span {
-    display: block;
-    width: 64px;
-    height: 24px;
-    background: var(--surface-color);
-    border: 1px solid var(--stroke-color);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 9999px;
-  }
