@@ -59,7 +59,7 @@ body * {
 }
 
 /* Links */
-ul {
+.teste {
     list-style: none;
 
     display: flex;
