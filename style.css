@@ -26,6 +26,7 @@
 
 body {
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
 }
 
 body * {
@@ -109,16 +110,15 @@ ul li a:hover {
 
     position: absolute;
     top: 50%;
-    right: 0;
+    left: 0;
     z-index: 1;
     transform: translateY(-50%);
 
-    animation: slide-back 0.2s;
+    animation: slide-back 0.4s;
 }
 
 .light #switch button {
-    left: 0;
-    right: initial;
+   animation: slide-in 0.4s forwards;
 }
 
 #switch button:hover {
@@ -164,4 +164,36 @@ ul li a:hover {
     padding: 24px 0;
     font-size: 14px;
     text-align: center;
+}
+
+
+/* media queries */
+@media (min-width: 700px) {
+    :root {
+        --bg-url: url(/src/assets/bg-desktop.jpg);
+    }
+
+    .light {
+        --bg-url: url(/src/assets/bg-desktop-light.jpg);
+    }
+}
+
+
+/* animation */
+@keyframes slide-in {
+    from{ 
+        left: 0;
+    }
+    to{
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from{ 
+        left: 50%;
+    }
+    to{
+        left: 0;
+    }
 }
